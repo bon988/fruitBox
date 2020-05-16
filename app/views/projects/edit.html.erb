@@ -1,0 +1,27 @@
+<h1>Edit Projects</h1>
+
+<%= form_for :project, url: project_path(@project), method: :patch do |f| %>
+    <%if @project.errors.any? %>
+        <% @project.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+     <% end %>
+    <p>
+        <%= f.label :name %><br>
+        <%= f.text_field(:name, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+        <%= f.label :season %><br>
+        <%= f.text_field(:season, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+        <%= f.label :category %><br>
+        <%= f.text_field(:category, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+        <%= f.submit({:class => 'btn btn-primary'}) %>
+    </p>
+<% end %>

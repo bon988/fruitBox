@@ -1,3 +1,16 @@
+<!--show view -->
+
 <h2><%= @project.name %></h2>
 <p><%= @project.season %></p>
 <p><%= @project.category %></p>
+<hr>
+
+<!--Edit button -->
+<%= link_to "Edit", edit_project_path(@project), :class => 'btn btn-default' %>
+
+<!--Delete button -->
+<!-- with a delete confirmation dialog box warning when delete is activated -->
+<%= link_to "Delete", project_path(@project), 
+            method: :delete,
+            data: {confirm: 'Are you sure?'},
+            :class => 'btn btn-default' %>
