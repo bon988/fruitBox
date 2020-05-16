@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+    #http authentication - validation
+    #to authenticate on all the routes except homepage(index) and show page
+    http_basic_authenticate_with name: "nci", password: "1234", except: [:index, :show]
+    	
     #home page
     def index
         @projects = Project.all

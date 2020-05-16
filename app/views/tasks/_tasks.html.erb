@@ -1,0 +1,10 @@
+<h3>Tasks</h3>
+<!--loop to loop through each created task variable -->
+<% @project.tasks.each do |task| %>
+    <div class ="well">
+        <p><strong>Box Quantity: </strong><%= task.boxqty %> <br> <strong>Created: </strong> <%= task.created %> <br> <strong>Delivery Slot: </strong> <%= task.deliveryslot %></p>
+        <%= link_to '[x]', [task.project, task],
+	                method: :delete,
+	                data: { confirm: 'Are you sure?' } %></p>
+	</div>
+<% end %>

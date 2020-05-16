@@ -1,0 +1,19 @@
+<h3>Add Task</h3>
+<!--Task form -->
+<%= form_for([@project, @project.tasks.build]) do |f| %>
+    <p>
+        <%= f.label :boxqty %><br> 
+        <%= f.text_field(:boxqty, {:class => 'form-control'}) %>
+    </p>
+    <p>
+        <%= f.label :created %><br>
+        <%= f.text_field(:created, {:class => 'form-control'}) %>
+    </p>
+    <p>
+        <%= f.label :deliveryslot %><br>
+        <%= f.text_field(:deliveryslot, {:class => 'form-control'}) %>
+    </p>
+    <p>
+        <%= f.submit({:class => 'btn btn-default'}) %>
+    </p>
+<% end %>

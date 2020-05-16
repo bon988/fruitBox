@@ -3,6 +3,7 @@
 <h2><%= @project.name %></h2>
 <p><%= @project.season %></p>
 <p><%= @project.category %></p>
+
 <hr>
 
 <!--Edit button -->
@@ -14,3 +15,9 @@
             method: :delete,
             data: {confirm: 'Are you sure?'},
             :class => 'btn btn-default' %>
+
+<hr>
+
+<!--partial links to views _comments and _form -->
+<%= render 'tasks/tasks' %>
+<%= render 'tasks/form' %>
