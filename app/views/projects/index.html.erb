@@ -1,0 +1,10 @@
+<h1>Projects</h1>
+
+<% @projects.each do |project| %>
+    <div class="well">
+        <h3><%= project.name %></h3>
+        <p><%= project.season %></p>
+        <p><%= project.category %></p>
+        <%=link_to "More", project_path(project), :class => 'btn btn-default' %>
+    </div>
+<% end %>
