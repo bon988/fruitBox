@@ -1,5 +1,10 @@
+<!-- partial for displaying all the tasks-->
+<!--Read of CRUD for tasks -->
+
 <h3>Tasks</h3>
-<!--loop to loop through each created task variable -->
+<!--a loop used to loop through each variable(boxqty, created, delieveryslot)
+in task  -->
+<!-- a delete function '[x]' which creates a pop-up dialog box to confirm the delete -->
 <% @project.tasks.each do |task| %>
     <div class ="well">
         <p><strong>Box Quantity: </strong><%= task.boxqty %> <br> <strong>Created: </strong> <%= task.created %> <br> <strong>Delivery Slot: </strong> <%= task.deliveryslot %></p>

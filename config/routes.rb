@@ -4,8 +4,7 @@ Rails.application.routes.draw do
  
  get 'about' => 'pages#about', as: 'about'
  
-  #so that tasks in nested within projects
-  #example so url is projects/1/tasks/1
+  #so that tasks is nested within projects
  resources :projects do 
   resources :tasks
  end

@@ -1,5 +1,9 @@
-<h1>Add Projects</h1>
+<!-- adding a new project page -->
+<!-- Create of CRUD for projects-->
 
+<h1>Add Projects</h1>
+<!-- form to add/create a new project -->
+<!-- if statement - to loop through messages and wrap messages in an alert div -->
 <%= form_for :project, url: projects_path do |f| %>
     <%if @project.errors.any? %>
         <% @project.errors.full_messages.each do |msg| %>
