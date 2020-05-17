@@ -8,18 +8,18 @@ created(timestamp), delivery slot(datetime) -->
 <!--button styled with 'btn btn-default' -->
 <%= form_for([@project, @project.tasks.build]) do |f| %>
     <p>
-        <%= f.label :boxqty %><br> 
+        <%= f.label :boxqty, "Box Quantity" %><br> 
         <%= f.text_field(:boxqty, {:class => 'form-control'}) %>
     </p>
     <p>
-        <%= f.label :created %><br>
+        <%= f.label :created, "Created on (eg. May 17 2020 12:00:00)" %><br>
         <%= f.text_field(:created, {:class => 'form-control'}) %>
     </p>
     <p>
-        <%= f.label :deliveryslot %><br>
+        <%= f.label :deliveryslot, "Delivery Slot (eg. May 19 2020 11:00:00)" %><br>
         <%= f.text_field(:deliveryslot, {:class => 'form-control'}) %>
     </p>
     <p>
-        <%= f.submit({:class => 'btn btn-default'}) %>
+        <%= f.submit({:class => 'btn btn-success'}) %>
     </p>
 <% end %>

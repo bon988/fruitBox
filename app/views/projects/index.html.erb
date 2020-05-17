@@ -1,14 +1,14 @@
 <!-- home/index page  -->
-<!--Read of CRUD for projects -->
 
+<!--List of projects created - 'Read' CRUD for projects -->
 <h1>Projects</h1>
 <!-- shows list of all projects(name, season, category) created by users -->
 <!--link button 'More' with styling class 'btn-btn-default'-->
 <% @projects.each do |project| %>
     <div class="well">
         <h3><%= project.name %></h3>
-        <p><%= project.season %></p>
-        <p><%= project.category %></p>
+        <p><strong>Seasonal Produce: </strong><%= project.season %></p>
+        <p><strong>Category: </strong><%= project.category %></p>
         <%=link_to "More", project_path(project), :class => 'btn btn-default' %>
     </div>
 <% end %>

@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #fff;
+  font-size: 15px;
+}
+
+.container .navbar-brand{
+  font-size: 30px;
+  letter-spacing: 1.4px;
+  word-spacing: -5px;
+  color: #2C940E;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: capitalize;
+}
+
+.container {
+  color: #666666;
+}
+
+.container .nav{
+  font-size: 15px;
+}
+

@@ -7,7 +7,7 @@ in task  -->
 <!-- a delete function '[x]' which creates a pop-up dialog box to confirm the delete -->
 <% @project.tasks.each do |task| %>
     <div class ="well">
-        <p><strong>Box Quantity: </strong><%= task.boxqty %> <br> <strong>Created: </strong> <%= task.created %> <br> <strong>Delivery Slot: </strong> <%= task.deliveryslot %></p>
+        <p><strong>Box Quantity: </strong><%= task.boxqty %> <br> <strong>Created on: </strong> <%= task.created %> <br> <strong>Delivery Slot: </strong> <%= task.deliveryslot %></p>
         <%= link_to '[x]', [task.project, task],
 	                method: :delete,
 	                data: { confirm: 'Are you sure?' } %></p>

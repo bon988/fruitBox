@@ -3,21 +3,21 @@
 <!--Read, Edit and Delete of CRUD for projects -->
 
 <h2><%= @project.name %></h2>
-<p><%= @project.season %></p>
-<p><%= @project.category %></p>
+<p><strong>Seasonal Produce: </strong><%= @project.season %></p>
+<p><strong>Category: </strong><%= @project.category %></p>
 
 <hr>
 
 
 <!--Edit button - to link to the edit page (edit.htmll.erb) 
 to edit the project -->
-<%= link_to "Edit", edit_project_path(@project), :class => 'btn btn-default' %>
+<%= link_to "Edit", edit_project_path(@project), :class => 'btn btn-success' %>
 
 <!--Delete button - with a delete confirmation dialog box warning when delete is activated -->
 <%= link_to "Delete", project_path(@project), 
             method: :delete,
             data: {confirm: 'Are you sure?'},
-            :class => 'btn btn-default' %>
+            :class => 'btn btn-danger' %>
 
 <hr>
 
