@@ -1,9 +1,4 @@
 class TasksController < ApplicationController
-    #to authenticate on all the routes except homepage(index) and show views
-    #a security measure to prevent unauthorised users from creating, updating, deleting data
-    #unauthorised users can only 'read' (Read of CRUD) index views and show views 
-    http_basic_authenticate_with name: "nci", password: "1234", except: [:index, :show]
-    
     #create method -references project model(project.rb) and show views (show.html.erb)
     #finds the project by id
     #and assigns the new task to the project id

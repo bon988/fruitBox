@@ -1,5 +1,4 @@
 <!--show view -->
-<!--shows the result a project -->
 <!--Read, Edit and Delete of CRUD for projects -->
 
 <h2><%= @project.name %></h2>
@@ -9,11 +8,11 @@
 <hr>
 
 
-<!--Edit button - to link to the edit page (edit.htmll.erb) 
-to edit the project -->
+<!--Edit button - to link to the Edit Project Views -->
 <%= link_to "Edit", edit_project_path(@project), :class => 'btn btn-success' %>
 
-<!--Delete button - with a delete confirmation dialog box warning when delete is activated -->
+<!--Delete button -->
+<!--contains a delete confirmation dialog box warning when delete is selected -->
 <%= link_to "Delete", project_path(@project), 
             method: :delete,
             data: {confirm: 'Are you sure?'},
@@ -21,6 +20,6 @@ to edit the project -->
 
 <hr>
 
-<!--links to partial views (to read code from partial files _comments and _form under tasks) -->
+<!--links to Task Partial Views (to read the partial files '_tasks' and '_form') -->
 <%= render 'tasks/tasks' %>
 <%= render 'tasks/form' %>

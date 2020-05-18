@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  #helper method macro to assist with making the curent_user method accessible to Views 
   helper_method :current_user
   
   def current_user
@@ -9,3 +10,5 @@ class ApplicationController < ActionController::Base
     end
   end
 end
+
+ 
