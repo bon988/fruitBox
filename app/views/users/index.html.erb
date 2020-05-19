@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<!-- to show all users email and allow options to edit and destroy/delete -->
+<!-- users index Views -->
 <h1>Users</h1>
 
 <table>
@@ -11,6 +11,7 @@
   </thead>
 
   <tbody>
+    <!-- loops through each user and shows all users by email. Links to show, edit, destroy (CRUD) -->
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>

@@ -1,11 +1,9 @@
-<!-- partial for displaying the form to allow user to add a task -->
-<!--Create of CRUD for tasks -->
+<!-- partial for displaying form to create a task. Create of CRUD for tasks -->
 
 <h3>Add Task</h3>
-<!--adding a task form with input fields for box qty(int), 
-created(timestamp), delivery slot(datetime) -->
-<!--input fields styled with 'form-control' -->
-<!--button styled with 'btn btn-default' -->
+<!--form for adding a task with input fields passed as parameters :box qty, 
+:created, :delivery slot-->
+<!--input fields styled with 'form-control', button styled with 'btn btn-default' -->
 <%= form_for([@project, @project.tasks.build]) do |f| %>
     <p>
         <%= f.label :boxqty, "Box Quantity" %><br> 

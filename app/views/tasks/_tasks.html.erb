@@ -2,12 +2,14 @@
 <!--Read of CRUD for tasks -->
 
 <h3>Tasks</h3>
-<!--a loop used to loop through each variable(boxqty, created, delieveryslot)
-in task  -->
-<!-- a delete function '[x]' which creates a pop-up dialog box to confirm the delete -->
+<!--a loop used to loop through each task variable(boxqty, created, delieveryslot) -->
+<!-- '[x]' allows for task deletion, creates a pop-up dialog box to confirm the deletion -->
 <% @project.tasks.each do |task| %>
     <div class ="well">
-        <p><strong>Box Quantity: </strong><%= task.boxqty %> <br> <strong>Created on: </strong> <%= task.created %> <br> <strong>Delivery Slot: </strong> <%= task.deliveryslot %></p>
+        <p><strong>Box Quantity: </strong><%= task.boxqty %> <br> 
+        <strong>Created on: </strong><%= task.created %> <br> 
+        <strong>Delivery Slot: </strong> <%= task.deliveryslot %>
+        </p>
         <%= link_to '[x]', [task.project, task],
 	                method: :delete,
 	                data: { confirm: 'Are you sure?' } %></p>

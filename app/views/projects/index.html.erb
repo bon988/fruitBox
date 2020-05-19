@@ -1,9 +1,9 @@
 <!-- home/index page  -->
 
-<!--List of projects created - 'Read' CRUD for projects -->
+<!--List of projects - 'Read' CRUD for projects -->
 <h1>Projects</h1>
-<!-- shows list of all projects(name, season, category) created by users -->
-<!--link button 'More' with styling class 'btn-btn-default'-->
+<!--loops through each project saved on database and shows project name, season and category -->
+<!--link button 'More' directs to show project Views -->
 <% @projects.each do |project| %>
     <div class="well">
         <h3><%= project.name %></h3>

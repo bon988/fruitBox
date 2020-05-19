@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  #before_action :set_user, only: [:show, :edit, :update, :destroy]
+  #authentication/authorization: skip_before_action macro
+  # #to skip the authorization on 2 Views (:new, :create)
+   #so unauthoristed users can access only new, create Views
   skip_before_action :authorized, only: [:new, :create]
 
   # GET /users

@@ -2,9 +2,8 @@
 <!-- Update of CRUD for projects -->
 
 <h1>Edit Projects</h1>
-<!-- form to edit a project -->
-<!-- form with 3 field inputs, name, season and category -->
-<!-- form text fields styled with 'form-control' -->
+<!-- form to edit a project with 3 input fields, name, season and category -->
+<!-- input fields passed as parameters :name, :season :category and styled with 'form-control' -->
 <%= form_for :project, url: project_path(@project), method: :patch do |f| %>
     <%if @project.errors.any? %>
         <% @project.errors.full_messages.each do |msg| %>

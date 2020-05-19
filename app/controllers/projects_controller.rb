@@ -1,31 +1,30 @@
 class ProjectsController < ApplicationController
     #home page
-    #projects displayed in descending order (so most recent project is shown)
+    #all projects displayed in descending order, so most recent project is shown
     def index
         @projects = Project.all.order('created_at DESC')
     end
     
-    #method show - references project Views (project.rb) and show Views (show.html.erb)
+    #show method - project Views (project.rb) and show Views (show.html.erb)
     #results shown when 'more' is selected by user in index/home page
     #params[:id] passed as parameters
-    #ie. a project is identified with an id number for example:../projects/1)
+    #ie. a project is identified with an id number (for example:../projects/1)
     #so it will find the project selected according to id number to show to user
     def show
         @project = Project.find(params[:id])
     end
     
-    #method new - references project Model (project.rb) and new Views (new.html.erb)
+    #new method - project Model (project.rb) and new Views (new.html.erb)
     #results shown when 'create project' is selected by user in the index/home page
-    #method created for the 'if statement' alert in the views new file
     def new
         @project = Project.new
     end
     
-    #create method - references project Model(project.rb) and new Views  (new.html.erb)
+    #create method - project Model(project.rb) and new Views (new.html.erb)
     #method has 'project_params' passed as parameters
-    #which requires values(specified in the project_params method) from user
-    #if else statement for 'save' function to redirect user to the Views show
-    #or else re-render the current page, new Views (render 'new')
+    #which requires values specified in the project_params method
+    #if else statement for 'save' function to redirect user to the show Views
+    #or else re-render the current page, new Views 
     def create
         @project = Project.new(project_params)
         
@@ -36,23 +35,23 @@ class ProjectsController < ApplicationController
         end
     end
     
-    #edit method - references Model project(project.rb) and Views edit(edit.html.erb)
+    #edit method -project Model (project.rb) and edit Views(edit.html.erb)
     #params[:id] passed as parameters
-    #ie. a project is identified with an id number for example:../projects/1)
+    #ie. a project is identified with an id number (for example:../projects/1)
     #so it will find according to id number, the project selected by the user 
-    #and show the views edit format with the project details
+    #and show the edit Views format with the project details
     def edit
          @project = Project.find(params[:id])
     end
     
-    #update method - references project Model(project.rb) and edit Views (edit.html.erb)
-    #params[:id] passed as parameters
-    #ie. a project is identified with an id number for example:../projects/1)
+    #update method - project Model(project.rb) and edit Views (edit.html.erb)
+    #respinsible for updating a project based on id params
+    #ie. a project is identified with an id number (for example:../projects/1)
     #so it will find according to id number, the project selected by the user 
-    #and show the Views edit format with the project details
-    #if else statement to for 'save project' function to save updates to database
-    #and redirect user to show page of that project
-    ##or else re-render the current page, edit Views( render 'edit' )
+    #and show the edit Views
+    #if the project based on project_params (ie. name, season, category is passed) exists
+    #the project will be updated and saved and user is redirected
+    #otherwise re-renders page (edit project Views)
     def update
          @project = Project.find(params[:id])
          
@@ -63,9 +62,9 @@ class ProjectsController < ApplicationController
         end
     end
     
-    #destroy method - references project Model(project.rb) and show Views (show.html.erb)
+    #destroy method - project Model(project.rb) and show Views (show.html.erb)
     #to get the project by id
-    #and destroy that particular project and redirect to current page
+    #and delete that particular project, redirect to current page
     def destroy
          @project = Project.find(params[:id])
          @project.destroy
@@ -73,7 +72,7 @@ class ProjectsController < ApplicationController
          redirect_to projects_path
     end
     
-    #method project_params to allow only values: name, season, category
+    #project_params method to allow only values: name, season, category.
     #used as a parameter passed in the create method
     private def project_params
         params.require(:project).permit(:name, :season, :category)

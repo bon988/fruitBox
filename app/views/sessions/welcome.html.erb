@@ -2,6 +2,7 @@
 
 <hr>
 
+<!-- if else statement - to show logged in user email, else show sign up and log in -->
 <% if logged_in? %>
         <h3>You are logged in, <%= current_user.email %> !</h3>
     <% else %>
