@@ -1,0 +1,13 @@
+<h1>Welcome</h1>
+
+<hr>
+
+<% if logged_in? %>
+        <h3>You are logged in, <%= current_user.email %> !</h3>
+    <% else %>
+        <h3>Sign Up</h3>
+    <%= button_to "Sign Up", '/users/new', :class => 'btn btn-default', method: :get%>
+        <br>
+        <h3>Log In</h3>
+    <%= button_to "Login", '/login', :class => 'btn btn-default', method: :get%>
+<%end%>

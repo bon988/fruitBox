@@ -3,6 +3,6 @@ class User < ApplicationRecord
   #provides the authenticate method to authenticare with that password
   has_secure_password
   
-  #validation
+  #validation - to make sure we have an email address and it is unique
   validates :email, presence: true, uniqueness: true
 end

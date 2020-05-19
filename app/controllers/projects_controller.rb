@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
     #home page
+    #projects displayed in descending order (so most recent project is shown)
     def index
-        @projects = Project.all
+        @projects = Project.all.order('created_at DESC')
     end
     
     #method show - references project Views (project.rb) and show Views (show.html.erb)
